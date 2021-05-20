@@ -9,12 +9,12 @@ import { ListStoriesRoute } from "./routes/StoriesRoute";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <StoryContextProvider>
+      <StoryContextProvider>
+        <Router>
           <h1>GC Mad Libs</h1>
           <nav>
-            <Link to="/stories">See Saved Stories</Link >{" "}
-            <Link to="/create-story ">Create a New Story</Link>
+            <Link to="/stories">See Saved Stories</Link>{" "}
+            <Link to="/create-story">Create a New Story</Link>
           </nav>
           <Switch>
             <Route path="/stories/:num" exact>
@@ -23,10 +23,12 @@ function App() {
             <Route path="/create-story" exact>
               <CreateStoryRoute />
             </Route>
+            <Route path="/stories">
+              <ListStoriesRoute />
+            </Route>
           </Switch>
-          <ListStoriesRoute />
-        </StoryContextProvider>
-      </Router>
+        </Router>
+      </StoryContextProvider>
     </div>
   );
 }

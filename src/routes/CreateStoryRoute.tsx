@@ -1,4 +1,4 @@
-  import { FormEvent, useContext, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { useHistory } from "react-router";
 import { StoryContext } from "../context/story-context";
 import { Story } from "../model/Story";
@@ -20,12 +20,12 @@ function CreateStoryRoute() {
         title: title, words: [word1, word2, word3, word4],
     };
 
-    addStory(story);
+    const storyNum = addStory(story);
     setWord1("");
     setWord2("");
     setWord3("");
     setWord4("");
-    history.push("/");
+    history.push(`/stories/${storyNum}`);
   }
 
   return (
